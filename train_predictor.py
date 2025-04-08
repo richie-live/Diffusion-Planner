@@ -30,6 +30,7 @@ def boolean(v):
 
 def get_args():
     # Arguments
+    # argparse.ArgumentParser 命令行参数解析器对象
     parser = argparse.ArgumentParser(description='Training')
     parser.add_argument('--name', type=str, help='log name (default: "diffusion-planner-training")', default="diffusion-planner-training")
     parser.add_argument('--save_dir', type=str, help='save dir for model ckpt', default=".")

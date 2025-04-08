@@ -23,10 +23,10 @@ class Decoder(nn.Module):
         self.dit = DiT(
             sde=self._sde, 
             route_encoder = RouteEncoder(config.route_num, config.lane_len, drop_path_rate=config.encoder_drop_path_rate, hidden_dim=config.hidden_dim),
-            depth=config.decoder_depth, 
+            depth=config.decoder_depth, # default 3
             output_dim= (config.future_len + 1) * 4, # x, y, cos, sin
             hidden_dim=config.hidden_dim, 
-            heads=config.num_heads, 
+            heads=config.num_heads, # default 6
             dropout=dpr,
             model_type=config.diffusion_model_type
         )

@@ -10,6 +10,7 @@ TRAIN_SET_PATH="REPLACE_WITH_TRAIN_SET_PATH" # preprocess data using data_proces
 TRAIN_SET_LIST_PATH="REPLACE_WITH_TRAIN_SET_LIST_PATH"
 ###################################
 
+# PyTorch 单机多卡分布式训练 运行脚本为train_predictor.py
 sudo -E $RUN_PYTHON_PATH -m torch.distributed.run --nnodes 1 --nproc-per-node 8 --standalone train_predictor.py \
 --train_set  $TRAIN_SET_PATH \
 --train_set_list  $TRAIN_SET_LIST_PATH \
